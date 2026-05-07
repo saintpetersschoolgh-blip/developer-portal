@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import PlatformApiKeyBanner from "./PlatformApiKeyBanner";
 
 const navItems = [
+  { to: "/get-started", label: "Get Started" },
   { to: "/", label: "Dashboard" },
   { to: "/apps", label: "Apps" },
   { to: "/api-keys", label: "API Keys" },

@@ -9,6 +9,7 @@ import Apps from "./pages/Apps";
 import ApiKeys from "./pages/ApiKeys";
 import Users from "./pages/Users";
 import Billing from "./pages/Billing";
+import GetStarted from "./pages/GetStarted";
 
 export default function App() {
   const basename = import.meta.env.BASE_URL.replace(/\/$/, "") || undefined;
@@ -21,6 +22,7 @@ export default function App() {
           <Route element={<ProtectedRoute />}>
             <Route element={<Layout />}>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/get-started" element={<GetStarted />} />
               <Route path="/apps" element={<Apps />} />
               <Route path="/api-keys" element={<ApiKeys />} />
               <Route path="/users" element={<Users />} />

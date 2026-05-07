@@ -1,0 +1,15 @@
+# Railway config-as-code: https://docs.railway.com/reference/config-as-code
+#
+# Railpack detects Vite and serves dist/ with Caddy (see upstream Caddyfile template).
+# Do NOT set deploy.startCommand (e.g. vite preview): vite is a devDependency and is often
+# omitted from the runtime image, or it fights Caddy — either causes 502 from the edge.
+#
+# Set VITE_API_BASE_URL (and optional VITE_IDENTITY_ENGINE_API_KEY, etc.) in Railway Variables — inlined at build time.
+
+[build]
+buildCommand = "npm ci && npm run build"
+
+[deploy]
+healthcheckPath = "/health"
+healthcheckTimeout = 120
+restartPolicyType = "ON_FAILURE"
